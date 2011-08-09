@@ -7,7 +7,4 @@
 	"repository": "git://github.com/pvorb/props.git",
 	"tags": [ "parser", "properties", "markdown" ],
 	"bugs": "http://github.com/pvorb/props/issues",
-	"dependencies": {
-		"marked": ">=0.0.1"
-	}
 }
