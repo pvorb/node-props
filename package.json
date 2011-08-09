@@ -1,0 +1,9 @@
+{
+	"name": "props",
+	"description": "a simple property extractor",
+	"author": "Paul Vorbach",
+	"version": "0.0.1",
+	"main": "./lib/props.js",
+	"repository": "git://github.com/pvorb/props.git",
+	"keywords": [ "parser", "properties" ]
+}

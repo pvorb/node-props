@@ -1,0 +1,18 @@
+_props_ is a tiny module for node that is able to extract a couple of
+key-value pairs from the beginning of a string. You could use it like this:
+
+	var props = require("props");
+
+	var str =
+		'title: How to use node.js
+		date: 2011-08-09T17:56:00
+
+		Node.js is a new …';
+
+	console.log(props(str));
+
+This will print the following:
+
+	[ 'Node.js is a new …';
+	  title: 'How to use node.js'
+	  date: '2011-08-09T17:56:00' ]
