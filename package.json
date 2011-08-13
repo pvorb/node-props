@@ -1,10 +1,12 @@
 {
 	"name": "props",
-	"description": "a simple property extractor",
+	"description": "extract properties from the beginning of text files",
 	"author": "Paul Vorbach <paul@vorb.de>",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"main": "./lib/props.js",
 	"repository": "git://github.com/pvorb/props.git",
 	"tags": [ "parser", "properties", "markdown" ],
-	"bugs": "http://github.com/pvorb/props/issues"
+	"bugs": {
+		"web": "http://github.com/pvorb/props/issues"
+	}
 }
