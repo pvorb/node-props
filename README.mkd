@@ -13,6 +13,6 @@ key-value pairs from the beginning of a string. You could use it like this:
 
 This will print the following:
 
-	[ __content: 'Node.js is a new …';
-	  title: 'How to use node.js'
+	[ __content: 'Node.js is a new …',
+	  title: 'How to use node.js',
 	  date: '2011-08-09T17:56:00' ]
