@@ -10,28 +10,28 @@ var props = require("props");
 // Use JSON
 
 var json =
-	'{\
-		"title": "How to use node.js",\
-		"date": "2011-08-09T17:56:00",\
-		"tags": [ "example", "node.js" ]\
-	}\
-\
-\
-	Node.js is a new technology...';
+'{\n\
+  "title": "How to use node.js",\n\
+  "date": "2011-08-09T17:56:00",\n\
+  "tags": [ "example", "node.js" ]\n\
+}\n\
+\n\
+\n\
+Node.js is a new technology...';
 
 console.log(props(json));
 
 // or YAML
 
 var yaml =
-	'title: How to use node.js\
-	date: 2011-08-09T17:56:00\
-	tags:\
-		- example\
-		- node.js\
-\
-\
-	Node.js is a new technology...';
+'title: How to use node.js\n\
+date: 2011-08-09T17:56:00\n\
+tags:\n\
+  - example\n\
+  - node.js\
+\n\
+\n\
+Node.js is a new technology...';
 
 console.log(props(yaml));
 ```
@@ -47,9 +47,13 @@ _JSON_:
   __content: 'Node.js is a new technology...' }
 
 ```
+
 _YAML_:
 ```javascript
-
+{ title: 'How to use node.js',
+  date: Tue, 09 Aug 2011 15:56:00 GMT,
+  tags: [ 'example', 'node.js' ],
+  __content: 'Node.js is a new technology...' }
 ```
 
 The difference is that, due to it's JS implementation, the Date is parsed in the
@@ -57,6 +61,7 @@ YAML version.
 
 The JSON/YAML part has to be **always** seperated from the content by three
 newline characters (`\n\n\n` or `\r\n\r\n\r\n`).
+
 
 License
 =======
