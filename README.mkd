@@ -1,18 +1,64 @@
-_props_ is a tiny module for node that is able to extract a couple of
-key-value pairs from the beginning of a string. You could use it like this:
+**props** is a module for node that is able to extract either JSON or YAML from
+the beginning of a string.
 
-	var props = require("props");
+Usage
+=====
 
-	var str =
-		'title: How to use node.js
-		date: 2011-08-09T17:56:00
+```javascript
+var props = require("props");
 
-		Node.js is a new …';
+// Use JSON
 
-	console.log(props(str));
+var json =
+	'{\
+		"title": "How to use node.js",\
+		"date": "2011-08-09T17:56:00",\
+		"tags": [ "example", "node.js" ]\
+	}\
+\
+\
+	Node.js is a new technology...';
 
-This will print the following:
+console.log(props(json));
 
-	[ __content: 'Node.js is a new …',
-	  title: 'How to use node.js',
-	  date: '2011-08-09T17:56:00' ]
+// or YAML
+
+var yaml =
+	'title: How to use node.js\
+	date: 2011-08-09T17:56:00\
+	tags:\
+		- example\
+		- node.js\
+\
+\
+	Node.js is a new technology...';
+
+console.log(props(yaml));
+```
+
+This will print nearly the same object twice, since `json` and `yaml` define the
+same object:
+
+_JSON_:
+```javascript
+{ title: 'How to use node.js',
+  date: '2011-08-09T17:56:00',
+  tags: [ 'example', 'node.js' ],
+  __content: 'Node.js is a new technology...' }
+
+```
+_YAML_:
+```javascript
+
+```
+
+The difference is that, due to it's JS implementation, the Date is parsed in the
+YAML version.
+
+The JSON/YAML part has to be **always** seperated from the content by three
+newline characters (`\n\n\n` or `\r\n\r\n\r\n`).
+
+License
+=======
+
+The [MIT license](http://vorb.de/license/mit.html).
