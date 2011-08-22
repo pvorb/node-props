@@ -40,6 +40,7 @@ This will print nearly the same object twice, since `json` and `yaml` define the
 same object:
 
 _JSON_:
+
 ```javascript
 { title: 'How to use node.js',
   date: '2011-08-09T17:56:00',
@@ -49,6 +50,7 @@ _JSON_:
 ```
 
 _YAML_:
+
 ```javascript
 { title: 'How to use node.js',
   date: Tue, 09 Aug 2011 15:56:00 GMT,
