@@ -7,7 +7,7 @@
 	"repository": "git://github.com/pvorb/node-props.git",
 	"tags": [ "parser", "properties", "json", "yaml" ],
 	"bugs": {
-		"web": "http://github.com/pvorb/node-props/issues"
+		"url": "http://github.com/pvorb/node-props/issues"
 	},
 	"dependencies": {
 		"yamlparser": ">= 0.0.2"
