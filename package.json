@@ -1,15 +1,15 @@
 {
-	"name": "props",
-	"description": "extract json/yaml from the beginning of text files",
-	"author": "Paul Vorbach <paul@vorb.de> (http://vorb.de)",
-	"version": "0.1.0",
-	"main": "lib/props.js",
-	"repository": "git://github.com/pvorb/node-props.git",
-	"tags": [ "parser", "properties", "json", "yaml" ],
-	"bugs": {
-		"url": "http://github.com/pvorb/node-props/issues"
-	},
-	"dependencies": {
-		"yamlparser": ">= 0.0.2"
-	}
+  "name": "props",
+  "description": "extract json/yaml from the beginning of text files",
+  "author": "Paul Vorbach <paul@vorb.de> (http://vorb.de)",
+  "version": "0.1.0",
+  "main": "lib/props.js",
+  "repository": "git://github.com/pvorb/node-props.git",
+  "tags": [ "parser", "properties", "json", "yaml" ],
+  "bugs": {
+    "url": "http://github.com/pvorb/node-props/issues"
+  },
+  "dependencies": {
+    "yamlparser": ">= 0.0.2"
+  }
 }
