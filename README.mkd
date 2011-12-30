@@ -33,7 +33,7 @@ var yaml =
 date: 2011-08-09T17:56:00\n\
 tags:\n\
   - example\n\
-  - node.js\
+  - node.js\n\
 \n\
 \n\
 Node.js is a new technology...';
