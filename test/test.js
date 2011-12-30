@@ -26,3 +26,10 @@ Node.js is a new technology...\n\
 another note';
 
 console.log(props(yaml));
+
+var fs = require('fs');
+var path = require('path');
+
+var content = fs.readFileSync(path.resolve(__dirname, 'test.mkd'), 'utf8');
+
+console.log(props(content));
