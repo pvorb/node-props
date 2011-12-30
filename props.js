@@ -1,24 +1,42 @@
+;(function() {
+
 var yaml = require('yamlparser');
 
-module.exports = function(str) {
+module.exports = function(str, div) {
+  div = div || /\n\n\n|\r\n\r\n\r\n/;
+
   // `str` must be a string
-  if (typeof str !== 'string')
+  if (typeof str != 'string')
     str = str.toString();
 
-  var split, result = {}, content;
+  // trim string
+  str = str.trim();
 
-  // If the string starts with "{", look for JSON
-  if (str.match(/^{/) && (split = str.split(/\r?\n\r?\n\r?\n/, 2)).length > 0)
-    result = JSON.parse(split[0]);
-  // If not, look for YAML
-  else if ((split = str.split(/\n\n\n|\r\n\r\n\r\n/, 2)).length > 0) {
-    result = yaml.eval(split[0]);
-  // If no match was found, the whole string is the content
+  var split;
+  var result = {};
+  var content;
+
+  // If a match was found
+  if ((split = str.split(div)).length > 0)
+    try {
+      // JSON
+      if (split[0].charAt(0) == '{')
+        result = JSON.parse(split[0]);
+      // YAML
+      else
+        result = yaml.eval(split[0]);
+    } catch (e) {
+      return { __content: str; };
+    }
   else
-    return { __content: str };
+    return { __content: str; };
 
-  // The second part of the array is the content string
-  result['__content'] = split[1];
+  delete split[0];
+  // Join remaining
+  str = split.join('\n\n\n');
 
+  result.__content = str;
   return result;
 };
+
+}).call(this);
