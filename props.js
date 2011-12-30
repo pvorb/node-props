@@ -26,10 +26,10 @@ module.exports = function(str, div) {
       else
         result = yaml.eval(split[0]);
     } catch (e) {
-      return { __content: str; };
+      return { __content: str };
     }
   else
-    return { __content: str; };
+    return { __content: str };
 
   delete split[0];
   // Join remaining

@@ -1,4 +1,4 @@
-var props = require("props");
+var props = require('../props.js');
 
 var json =
 	'{\n\
@@ -20,6 +20,9 @@ tags:\n\
   - node.js\n\
 \n\
 \n\
-Node.js is a new technology...';
+Node.js is a new technology...\n\
+\n\
+\n\
+another note';
 
 console.log(props(yaml));
