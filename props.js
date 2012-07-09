@@ -1,6 +1,4 @@
-;(function() {
-
-var yaml = require('yamlparser');
+var yaml = require('js-yaml');
 
 module.exports = function(str, div) {
   div = div || /\n\n\n|\r\n\r\n\r\n/;
@@ -41,5 +39,3 @@ module.exports = function(str, div) {
   result.__content = str;
   return result;
 };
-
-}).call(this);
