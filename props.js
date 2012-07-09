@@ -22,7 +22,7 @@ module.exports = function(str, div) {
         result = JSON.parse(split[0]);
       // YAML
       else
-        result = yaml.eval(split[0]);
+        result = yaml.load(split[0]);
     } catch (e) {
       return { __content: str };
     }
