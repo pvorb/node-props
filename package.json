@@ -12,13 +12,15 @@
     "parser",
     "properties",
     "json",
-    "yaml"
+    "yaml",
+    "jsml"
   ],
   "bugs": {
     "url": "http://github.com/pvorb/node-props/issues"
   },
   "dependencies": {
-    "js-yaml": ">=0.3.5 <1.1.0"
+    "js-yaml": ">=0.3.5 <1.1.0",
+    "jsml": "<0.1.0"
   },
   "devDependencies": {},
   "engines": {

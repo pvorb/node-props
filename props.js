@@ -1,4 +1,5 @@
-var yaml = require('js-yaml');
+var JSML = require('jsml');
+var YAML = require('js-yaml');
 
 module.exports = function(str, div) {
   div = div || /\n\n\n|\r\n\r\n\r\n/;
@@ -20,9 +21,12 @@ module.exports = function(str, div) {
       // JSON
       if (split[0].charAt(0) == '{')
         result = JSON.parse(split[0]);
+      // JSML
+      else if (split[0].charAt(0) == '"')
+        result = JSML.parse(split[0]);
       // YAML
       else
-        result = yaml.load(split[0]);
+        result = YAML.load(split[0]);
     } catch (e) {
       return { __content: str };
     }
